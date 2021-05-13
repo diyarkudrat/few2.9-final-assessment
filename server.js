@@ -22,9 +22,7 @@ const schema = buildSchema(`
     }
 `)
 
-const todoList = [
-    { name: "Test", completed: false, date: "05/11/2021", id: "1" }
-]
+const todoList = [];
 
 const root = {
     getAllTodos: () => {
@@ -50,7 +48,7 @@ const root = {
 
         return uncompleted;
     },
-    getTodo: (id) => {
+    getTodo: ({ id }) => {
         return todoList[id];
     },
     completeTodo: ({ id }) => {
